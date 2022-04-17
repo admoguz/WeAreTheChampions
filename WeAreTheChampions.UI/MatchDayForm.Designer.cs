@@ -33,9 +33,7 @@
             this.cboSecondTeamName = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.dtpMatchDate = new System.Windows.Forms.DateTimePicker();
-            this.txtMatchTime = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -63,7 +61,7 @@
             // 
             this.cboSecondTeamName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cboSecondTeamName.FormattingEnabled = true;
-            this.cboSecondTeamName.Location = new System.Drawing.Point(390, 49);
+            this.cboSecondTeamName.Location = new System.Drawing.Point(280, 49);
             this.cboSecondTeamName.Name = "cboSecondTeamName";
             this.cboSecondTeamName.Size = new System.Drawing.Size(243, 38);
             this.cboSecondTeamName.TabIndex = 3;
@@ -72,7 +70,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(383, 9);
+            this.label2.Location = new System.Drawing.Point(273, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(185, 37);
             this.label2.TabIndex = 2;
@@ -82,73 +80,55 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 128);
+            this.label3.Location = new System.Drawing.Point(12, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(167, 37);
             this.label3.TabIndex = 4;
             this.label3.Text = "Match Date :";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 198);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(169, 37);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Match Time :";
-            // 
             // dtpMatchDate
             // 
             this.dtpMatchDate.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpMatchDate.Location = new System.Drawing.Point(185, 130);
+            this.dtpMatchDate.Location = new System.Drawing.Point(185, 113);
             this.dtpMatchDate.Name = "dtpMatchDate";
-            this.dtpMatchDate.Size = new System.Drawing.Size(308, 35);
+            this.dtpMatchDate.Size = new System.Drawing.Size(338, 35);
             this.dtpMatchDate.TabIndex = 6;
-            // 
-            // txtMatchTime
-            // 
-            this.txtMatchTime.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMatchTime.Location = new System.Drawing.Point(185, 199);
-            this.txtMatchTime.Name = "txtMatchTime";
-            this.txtMatchTime.Size = new System.Drawing.Size(308, 35);
-            this.txtMatchTime.TabIndex = 7;
             // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Gold;
             this.btnCancel.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(511, 184);
+            this.btnCancel.Location = new System.Drawing.Point(273, 171);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(122, 50);
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAdd.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(511, 128);
+            this.btnAdd.Location = new System.Drawing.Point(401, 171);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(122, 50);
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // MatchDayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.ClientSize = new System.Drawing.Size(646, 269);
+            this.ClientSize = new System.Drawing.Size(547, 232);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtMatchTime);
             this.Controls.Add(this.dtpMatchDate);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cboSecondTeamName);
             this.Controls.Add(this.label2);
@@ -157,6 +137,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.Name = "MatchDayForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Match Day";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,9 +151,7 @@
         private System.Windows.Forms.ComboBox cboSecondTeamName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpMatchDate;
-        private System.Windows.Forms.TextBox txtMatchTime;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
     }

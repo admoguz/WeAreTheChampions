@@ -143,12 +143,12 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Corbel", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.ForeColor = System.Drawing.Color.Tomato;
+            this.label9.Font = new System.Drawing.Font("Corbel", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(72, 21);
             this.label9.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(26, 42);
+            this.label9.Size = new System.Drawing.Size(29, 45);
             this.label9.TabIndex = 25;
             this.label9.Text = "l";
             // 
@@ -198,17 +198,21 @@
             // 
             this.hsbRed.LargeChange = 1;
             this.hsbRed.Location = new System.Drawing.Point(139, 112);
+            this.hsbRed.Maximum = 255;
             this.hsbRed.Name = "hsbRed";
             this.hsbRed.Size = new System.Drawing.Size(570, 23);
             this.hsbRed.TabIndex = 34;
+            this.hsbRed.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hsbRed_Scroll);
             // 
             // hsbGreen
             // 
             this.hsbGreen.LargeChange = 1;
             this.hsbGreen.Location = new System.Drawing.Point(139, 168);
+            this.hsbGreen.Maximum = 255;
             this.hsbGreen.Name = "hsbGreen";
             this.hsbGreen.Size = new System.Drawing.Size(570, 23);
             this.hsbGreen.TabIndex = 36;
+            this.hsbGreen.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hsbGreen_Scroll);
             // 
             // label2
             // 
@@ -224,9 +228,11 @@
             // 
             this.hsbBlue.LargeChange = 1;
             this.hsbBlue.Location = new System.Drawing.Point(139, 219);
+            this.hsbBlue.Maximum = 255;
             this.hsbBlue.Name = "hsbBlue";
             this.hsbBlue.Size = new System.Drawing.Size(570, 23);
             this.hsbBlue.TabIndex = 38;
+            this.hsbBlue.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hsbBlue_Scroll);
             // 
             // label3
             // 
@@ -287,6 +293,7 @@
             this.lstColors.Name = "lstColors";
             this.lstColors.Size = new System.Drawing.Size(696, 274);
             this.lstColors.TabIndex = 43;
+            this.lstColors.SelectedIndexChanged += new System.EventHandler(this.lstColors_SelectedIndexChanged);
             // 
             // lblSelectedColor
             // 
@@ -305,6 +312,7 @@
             this.btnAdd.TabIndex = 45;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -315,6 +323,7 @@
             this.btnEdit.TabIndex = 45;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -325,6 +334,7 @@
             this.btnDelete.TabIndex = 45;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // ColorsForm
             // 
@@ -362,6 +372,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.Name = "ColorsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ColorsForm";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -34,12 +34,11 @@
             this.txtPlayerName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cboListPlayers = new System.Windows.Forms.ComboBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lstPlayers = new System.Windows.Forms.ListBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAllListPlayers = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +68,7 @@
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cboTeamName
             // 
@@ -78,6 +78,7 @@
             this.cboTeamName.Name = "cboTeamName";
             this.cboTeamName.Size = new System.Drawing.Size(328, 34);
             this.cboTeamName.TabIndex = 8;
+            this.cboTeamName.SelectedIndexChanged += new System.EventHandler(this.cboTeamName_SelectedIndexChanged);
             // 
             // txtPlayerName
             // 
@@ -107,34 +108,14 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Player Name :";
             // 
-            // label3
+            // lstPlayers
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(19, 236);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 37);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "List Players :";
-            // 
-            // cboListPlayers
-            // 
-            this.cboListPlayers.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboListPlayers.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cboListPlayers.FormattingEnabled = true;
-            this.cboListPlayers.Location = new System.Drawing.Point(199, 235);
-            this.cboListPlayers.Name = "cboListPlayers";
-            this.cboListPlayers.Size = new System.Drawing.Size(328, 38);
-            this.cboListPlayers.TabIndex = 7;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 37;
-            this.listBox1.Location = new System.Drawing.Point(26, 279);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(501, 300);
-            this.listBox1.TabIndex = 8;
+            this.lstPlayers.FormattingEnabled = true;
+            this.lstPlayers.ItemHeight = 37;
+            this.lstPlayers.Location = new System.Drawing.Point(26, 316);
+            this.lstPlayers.Name = "lstPlayers";
+            this.lstPlayers.Size = new System.Drawing.Size(501, 263);
+            this.lstPlayers.TabIndex = 8;
             // 
             // btnEdit
             // 
@@ -146,6 +127,7 @@
             this.btnEdit.TabIndex = 9;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -157,6 +139,7 @@
             this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // pictureBox1
             // 
@@ -170,28 +153,39 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // btnAllListPlayers
+            // 
+            this.btnAllListPlayers.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAllListPlayers.Font = new System.Drawing.Font("Corbel", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAllListPlayers.Location = new System.Drawing.Point(26, 236);
+            this.btnAllListPlayers.Name = "btnAllListPlayers";
+            this.btnAllListPlayers.Size = new System.Drawing.Size(501, 60);
+            this.btnAllListPlayers.TabIndex = 11;
+            this.btnAllListPlayers.Text = "All List Players";
+            this.btnAllListPlayers.UseVisualStyleBackColor = false;
+            this.btnAllListPlayers.Click += new System.EventHandler(this.btnAllListPlayers_Click);
+            // 
             // PlayersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(787, 591);
+            this.Controls.Add(this.btnAllListPlayers);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.cboListPlayers);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lstPlayers);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.Name = "PlayersForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Players Form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -204,10 +198,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cboListPlayers;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstPlayers;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAllListPlayers;
     }
 }
